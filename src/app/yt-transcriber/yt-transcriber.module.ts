@@ -1,4 +1,4 @@
-import { ApiService } from '../service/api.service';
+import { YoutubeCaptionService } from '../service/youtube-caption.service';
 import { YtTranscriberComponent } from './yt-transcriber.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -24,7 +24,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [
-    ApiService
+    YoutubeCaptionService
   ]
 })
 export class YtTranscriberModule { }
