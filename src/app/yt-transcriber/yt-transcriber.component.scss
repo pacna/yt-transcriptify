@@ -1,0 +1,20 @@
+@import '../../colors.scss'; 
+
+.yt-transcriber-container {
+    text-align: center;
+}
+
+form {
+    margin-top: 32px;
+}
+
+button {
+    background-color: $primary !important;
+    bottom: 8px;
+    border-radius: 0px 12px 12px 0px;
+    padding: 8px;
+}
+
+.mat-form-field {
+    width: 320px;
+}

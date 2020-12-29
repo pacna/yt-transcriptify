@@ -1,0 +1,9 @@
+<div class="yt-transcriber-container">
+    <form [formGroup]="ytLinkGroup" (ngSubmit)="submit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Youtube link</mat-label>
+          <input matInput formControlName="link">
+        </mat-form-field>
+        <button [disabled]="!ytLinkGroup.valid" class="submit" mat-flat-button color="accent">Submit</button>
+    </form>
+</div>
