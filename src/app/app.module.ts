@@ -1,4 +1,4 @@
-import { YtTranscriberModule } from './yt-transcriber/yt-transcriber.module';
+import { YtTranscriptionModule } from './yt-transcription/yt-transcription.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,7 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     AppComponent
   ],
   imports: [
-    YtTranscriberModule,
+    YtTranscriptionModule,
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,

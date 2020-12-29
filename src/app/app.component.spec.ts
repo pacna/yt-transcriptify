@@ -31,6 +31,6 @@ describe('AppComponent', () => {
 
   it('should render title', () => {
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.title').textContent).toContain('Angular Yt Transcriber');
+    expect(compiled.querySelector('.title').textContent).toContain('Angular Yt Transcription');
   });
 });

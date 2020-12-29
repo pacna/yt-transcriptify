@@ -1,5 +1,5 @@
 import { YoutubeCaptionService } from '../service/youtube-caption.service';
-import { YtTranscriberComponent } from './yt-transcriber.component';
+import { YtTranscriptionComponent } from './yt-transcription.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -10,10 +10,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    YtTranscriberComponent
+    YtTranscriptionComponent
   ],
   exports: [
-    YtTranscriberComponent
+    YtTranscriptionComponent
   ],
   imports: [
     CommonModule,
@@ -27,4 +27,4 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     YoutubeCaptionService
   ]
 })
-export class YtTranscriberModule { }
+export class YtTranscriptionModule { }

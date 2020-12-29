@@ -10,11 +10,11 @@ import { HttpErrorResponse } from '@angular/common/http';
 @UntilDestroy()
 @Component({
   // tslint:disable-next-line: component-selector
-  selector: 'yt-transcriber',
-  templateUrl: './yt-transcriber.component.html',
-  styleUrls: ['./yt-transcriber.component.scss']
+  selector: 'yt-transcription',
+  templateUrl: './yt-transcription.component.html',
+  styleUrls: ['./yt-transcription.component.scss']
 })
-export class YtTranscriberComponent implements OnInit {
+export class YtTranscriptionComponent implements OnInit {
   ytSegments: string[];
   videoDuration: number;
   linkControl = new FormControl(null, [Validators.required]);

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-yt-transcriber": {
+    "angular-yt-transcription": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-yt-transcriber",
+            "outputPath": "dist/angular-yt-transcription",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,19 +66,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-yt-transcriber:build",
+            "browserTarget": "angular-yt-transcription:build",
             "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-yt-transcriber:build:production"
+              "browserTarget": "angular-yt-transcription:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-yt-transcriber:build"
+            "browserTarget": "angular-yt-transcription:build"
           }
         },
         "test": {
@@ -116,15 +116,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-yt-transcriber:serve"
+            "devServerTarget": "angular-yt-transcription:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-yt-transcriber:serve:production"
+              "devServerTarget": "angular-yt-transcription:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "angular-yt-transcriber"
+  "defaultProject": "angular-yt-transcription"
 }

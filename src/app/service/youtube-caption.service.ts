@@ -1,4 +1,4 @@
-import { YoutubeEventResponse } from '../yt-transcriber/types/yt.types';
+import { YoutubeEventResponse } from '../yt-transcription/types/yt.types';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';

@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { YtTranscriberComponent } from './yt-transcriber.component';
+import { YtTranscriptionComponent } from './yt-transcription.component';
 
-describe('YtTranscriberComponent', () => {
-  let component: YtTranscriberComponent;
-  let fixture: ComponentFixture<YtTranscriberComponent>;
+describe('YtTranscriptionComponent', () => {
+  let component: YtTranscriptionComponent;
+  let fixture: ComponentFixture<YtTranscriptionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ YtTranscriberComponent ]
+      declarations: [ YtTranscriptionComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(YtTranscriberComponent);
+    fixture = TestBed.createComponent(YtTranscriptionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
