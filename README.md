@@ -8,6 +8,12 @@ Angular Yt Transcription is a web app that displays a visual transcription of a 
 ## Prerequisites
 * [nodejs](https://nodejs.org/en/)
 
+## Installation
+```bash
+# install node modules
+$ npm ci
+```
+
 ## Running development server
 ```bash
 # run
