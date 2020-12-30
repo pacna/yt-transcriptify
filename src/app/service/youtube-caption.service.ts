@@ -14,7 +14,7 @@ export class YoutubeCaptionService {
     ytUrlSegment = '/youtube';
     constructor(private http: HttpClient) {}
 
-    getUrlContent(urlSegment: string): Observable<string> {
+    getUrlHtmlContent(urlSegment: string): Observable<string> {
         const headers = new HttpHeaders();
         headers.set('Content-Type', 'text/plain; charset=utf-8');
 

@@ -90,7 +90,7 @@ export class YtTranscriptionComponent implements OnInit {
   }
 
   getYoutubeCaptions(urlSegment: string): Observable<YoutubeEventResponse | null> {
-    return this.youtubeCaptionService.getUrlContent(urlSegment)
+    return this.youtubeCaptionService.getUrlHtmlContent(urlSegment)
             .pipe(
               untilDestroyed(this),
               switchMap((response: string) => {
