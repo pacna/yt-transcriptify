@@ -4,9 +4,21 @@
           <mat-label>Youtube link</mat-label>
           <input matInput formControlName="link">
         </mat-form-field>
-        <button [disabled]="!ytLinkGroup.valid" class="submit" mat-flat-button color="accent">Submit</button>
+        <button 
+            class="submit-button" 
+            [disabled]="!ytLinkGroup.valid" 
+            mat-flat-button color="accent"
+            type="submit">
+            Submit
+        </button>
     </form>
-    <div *ngFor="let segment of ytSegments">
-        {{ segment }}
+    <div class="info-options" *ngIf="videoDuration"> 
+        <span class="video-duration">
+            Video duration: {{ duration }} 
+        </span>
+        <button mat-icon-button type="button" (click)="download()">
+            <mat-icon >file_download</mat-icon>
+        </button>
     </div>
+    <transcription [ytSegments]="ytSegments"></transcription>
 </div>

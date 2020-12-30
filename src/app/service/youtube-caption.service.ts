@@ -22,7 +22,7 @@ export class YoutubeCaptionService {
                 querySegments.push(urlSegment);
             }
         });
-
+        // format the response to be json
         querySegments.push('fmt=json3');
 
         return this.http.get<YoutubeEventResponse>(`${this.ytUrlSegment}/api/timedtext?v=${vid}&${querySegments.join('&')}`);

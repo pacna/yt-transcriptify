@@ -10,6 +10,9 @@ form {
 
 button {
     background-color: $primary !important;
+}
+
+.submit-button {
     bottom: 8px;
     border-radius: 0px 12px 12px 0px;
     padding: 8px;
@@ -17,4 +20,12 @@ button {
 
 .mat-form-field {
     width: 320px;
+}
+
+.info-options {
+    margin-bottom: 12px;
+}
+
+.video-duration {
+    margin-right: 16px;
 }

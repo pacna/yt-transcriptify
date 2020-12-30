@@ -1,0 +1,9 @@
+@import '../../colors.scss';
+
+.transcription-container {
+    font-size: 20px;
+    line-height: 32px;
+    background-color: $transcription;
+    width: 480px;
+    margin: auto;
+}

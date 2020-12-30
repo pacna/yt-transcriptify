@@ -1,10 +1,12 @@
-import { YoutubeCaptionResponse, Event, Seg, YoutubeEventResponse } from './types/yt.types';
+import { Event, Seg, YoutubeEventResponse } from './types/yt.types';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { YoutubeCaptionService } from '../service/youtube-caption.service';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import * as moment from 'moment';
+import * as download from 'downloadjs';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @UntilDestroy()
@@ -49,6 +51,25 @@ export class YtTranscriptionComponent implements OnInit {
     });
 
     return captionSegments;
+  }
+
+  get duration(): string {
+    const time = moment.duration(this.videoDuration);
+    return `${this.formatTime(time.hours())}:${this.formatTime(time.minutes())}:${this.formatTime(time.seconds())}`;
+  }
+
+  formatTime(time: number): string {
+    const timeString: string = time.toString();
+    if (timeString.length === 1) {
+      return '0' + timeString;
+    }
+
+    return timeString;
+  }
+
+  download(): void {
+    const transcription: string = this.ytSegments.join(' ');
+    download(transcription, 'yt-transcription.txt', 'text/plain');
   }
 
   hasEmptyCaption(segs: Seg[]): boolean {
