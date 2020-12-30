@@ -14,7 +14,7 @@ Angular Yt Transcription is a web app that displays a visual transcription of a 
 $ npm ci
 ```
 
-## Running development server
+## Running locally
 ```bash
 # run
 $ ng serve
@@ -24,4 +24,4 @@ $ ng serve
 ```bash
 # run
 $ npm run test
-```
+``` 
