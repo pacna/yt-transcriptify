@@ -1,13 +1,17 @@
-import { Event, Seg, YoutubeEventResponse } from './types/yt.types';
+// Angular
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { YoutubeCaptionService } from '../service/youtube-caption.service';
-import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+
+// Third Party
 import * as moment from 'moment';
 import * as download from 'downloadjs';
-import { HttpErrorResponse } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+
+// Others
+import { Event, Seg, YoutubeEventResponse } from '../types/yt.types';
+import { YoutubeCaptionService } from '../service/youtube-caption.service';
 
 @UntilDestroy()
 @Component({
@@ -17,8 +21,9 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./yt-transcription.component.scss']
 })
 export class YtTranscriptionComponent implements OnInit {
-  ytSegments: string[];
+  captionSegments: string[];
   videoDuration: number;
+  canShowInfoOption = false;
   linkControl = new FormControl(null, [Validators.required]);
 
   ytLinkGroup = new FormGroup({
@@ -33,7 +38,10 @@ export class YtTranscriptionComponent implements OnInit {
     const urlSegments: string[] = this.linkControl.value.split('/');
 
     this.getYoutubeCaptions(urlSegments[3]).subscribe((response: YoutubeEventResponse) => {
-      this.ytSegments = response.events ? this.getCaptions(response.events) : [];
+      // if the input is either incorrect or there isn't any cc in the youtube video
+      // then ｡ﾟ･ (>﹏<) ･ﾟ｡
+      this.captionSegments = response?.events ? this.getCaptions(response.events) : ['｡ﾟ･ (>﹏<) ･ﾟ｡ Oh no!'];
+      this.canShowInfoOption = true;
     });
   }
 
@@ -54,7 +62,7 @@ export class YtTranscriptionComponent implements OnInit {
   }
 
   get duration(): string {
-    const time = moment.duration(this.videoDuration);
+    const time: moment.Duration = moment.duration(this.videoDuration);
     return `${this.formatTime(time.hours())}:${this.formatTime(time.minutes())}:${this.formatTime(time.seconds())}`;
   }
 
@@ -68,7 +76,7 @@ export class YtTranscriptionComponent implements OnInit {
   }
 
   download(): void {
-    const transcription: string = this.ytSegments.join(' ');
+    const transcription: string = this.captionSegments.join(' ');
     download(transcription, 'yt-transcription.txt', 'text/plain');
   }
 
@@ -91,7 +99,7 @@ export class YtTranscriptionComponent implements OnInit {
                 if (!!timedText) {
                   const timedTextUrlSegment: string[] = timedText[1].split(/\\u0026/g);
                   const vid: string = timedTextUrlSegment[0].split('v=')[1];
-                  return this.youtubeCaptionService.getCaption(vid, timedTextUrlSegment);
+                  return this.youtubeCaptionService.getCaptions(vid, timedTextUrlSegment);
                 }
 
                 return of (null);

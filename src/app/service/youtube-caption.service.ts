@@ -1,7 +1,13 @@
-import { YoutubeEventResponse } from '../yt-transcription/types/yt.types';
+// Angular
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
+// Third Party
 import { Observable } from 'rxjs';
+
+// Repo
+import { YoutubeEventResponse } from '../types/yt.types';
+import { UrlSegment } from './../types/url-segment.enum';
 
 @Injectable()
 export class YoutubeCaptionService {
@@ -15,10 +21,12 @@ export class YoutubeCaptionService {
         return this.http.get(`${this.ytUrlSegment}/${urlSegment}`, { headers, responseType: 'text'});
     }
 
-    getCaption(vid: string, urlSegments: string[]): Observable<YoutubeEventResponse> {
+    getCaptions(vid: string, urlSegments: string[]): Observable<YoutubeEventResponse> {
         const querySegments: string[] = [];
         urlSegments.forEach((urlSegment: string, index: number) => {
-            if (index !== 0) {
+            // already added the youtube url in the url string
+            // no need to add it again
+            if (index !== UrlSegment.youtubeUrl) {
                 querySegments.push(urlSegment);
             }
         });

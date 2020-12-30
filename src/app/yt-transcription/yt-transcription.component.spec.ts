@@ -1,5 +1,18 @@
+// Angular
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Material
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+// Repo
+import { mockYtCaptionService } from './../service/mock.services.spec';
+import { YoutubeCaptionService } from '../service/youtube-caption.service';
 import { YtTranscriptionComponent } from './yt-transcription.component';
+import { MockTranscriptionComponent } from './../mock.components.spec';
 
 describe('YtTranscriptionComponent', () => {
   let component: YtTranscriptionComponent;
@@ -7,7 +20,18 @@ describe('YtTranscriptionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ YtTranscriptionComponent ]
+      imports: [
+        HttpClientTestingModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        BrowserAnimationsModule,
+        FormsModule
+      ],
+      declarations: [ YtTranscriptionComponent, MockTranscriptionComponent],
+      providers: [
+        { provide: YoutubeCaptionService, value: mockYtCaptionService}
+      ]
     })
     .compileComponents();
   });

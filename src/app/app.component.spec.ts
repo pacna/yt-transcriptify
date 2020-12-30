@@ -1,7 +1,13 @@
-import { MatToolbarModule } from '@angular/material/toolbar';
+// Angular
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+
+// Material
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+// Repo
 import { AppComponent } from './app.component';
+import { MockYtTranscriptionComponent } from './mock.components.spec';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -14,7 +20,8 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        MockYtTranscriptionComponent
       ],
     }).compileComponents();
   }));

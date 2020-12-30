@@ -1,3 +1,4 @@
+// Angular
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
   styleUrls: ['./transcription.component.scss']
 })
 export class TranscriptionComponent implements OnInit, OnChanges {
-  @Input() ytSegments: string[];
+  @Input() captionSegments: string[];
   transcriptions: string[] = [];
 
   constructor() { }
@@ -15,8 +16,8 @@ export class TranscriptionComponent implements OnInit, OnChanges {
   ngOnInit(): void {}
 
   ngOnChanges(): void {
-    if (this.ytSegments) {
-      this.transcriptions = this.ytSegments;
+    if (this.captionSegments) {
+      this.transcriptions = this.captionSegments;
     }
   }
 

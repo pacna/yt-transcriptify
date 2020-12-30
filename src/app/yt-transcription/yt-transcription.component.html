@@ -12,7 +12,7 @@
             Submit
         </button>
     </form>
-    <div class="info-options" *ngIf="videoDuration"> 
+    <div class="info-options" *ngIf="canShowInfoOption"> 
         <span class="video-duration">
             Video duration: {{ duration }} 
         </span>
@@ -20,5 +20,5 @@
             <mat-icon >file_download</mat-icon>
         </button>
     </div>
-    <transcription [ytSegments]="ytSegments"></transcription>
+    <transcription [captionSegments]="captionSegments"></transcription>
 </div>
