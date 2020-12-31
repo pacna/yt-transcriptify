@@ -29,3 +29,9 @@ button {
 .video-duration {
     margin-right: 16px;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .mat-form-field {
+        max-width: 220px;
+    }
+}
