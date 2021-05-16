@@ -1,9 +1,8 @@
-@import '../colors.scss'; 
+@import "../colors.scss";
 
 .mat-toolbar {
-    background-color: $primary !important;
-}
-
-.title {
+  background-color: $primary !important;
+  .title {
     margin: auto;
+  }
 }

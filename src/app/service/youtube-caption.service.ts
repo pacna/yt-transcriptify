@@ -11,28 +11,41 @@ import { UrlSegment } from './../types/url-segment.enum';
 
 @Injectable()
 export class YoutubeCaptionService {
-    ytUrlSegment = '/youtube';
-    constructor(private http: HttpClient) {}
+  ytUrlSegment = '/youtube';
+  constructor(private http: HttpClient) {}
 
-    getUrlHtmlContent(urlSegment: string): Observable<string> {
-        const headers = new HttpHeaders();
-        headers.set('Content-Type', 'text/plain; charset=utf-8');
+  getUrlHtmlContent(urlSegment: string): Observable<string> {
+    const headers = new HttpHeaders();
+    headers.set('Content-Type', 'text/plain; charset=utf-8');
 
-        return this.http.get(`${this.ytUrlSegment}/${urlSegment}`, { headers, responseType: 'text'});
-    }
+    return this.http.get(`${this.ytUrlSegment}/${urlSegment}`, {
+      headers,
+      responseType: 'text',
+    });
+  }
 
-    getCaptions(vid: string, urlSegments: string[]): Observable<YoutubeEventResponse> {
-        const querySegments: string[] = [];
-        urlSegments.forEach((urlSegment: string, index: number) => {
-            // already added the youtube url in the url string
-            // no need to add it again
-            if (index !== UrlSegment.youtubeUrl) {
-                querySegments.push(urlSegment);
-            }
-        });
-        // format the response to be json
-        querySegments.push('fmt=json3');
+  getCaptions(
+    vid: string,
+    urlSegments: string[]
+  ): Observable<YoutubeEventResponse> {
+    const querySegments: string[] = [];
+    urlSegments.forEach((urlSegment: string, index: number) => {
+      // already added the youtube url in the url string
+      // no need to add it again
+      if (index !== UrlSegment.youtubeUrl) {
+        if (urlSegment.includes('lang=')) {
+          // set it to english caption
+          querySegments.push('lang=en');
+        } else {
+          querySegments.push(urlSegment);
+        }
+      }
+    });
+    // format the response to be json
+    querySegments.push('fmt=json3');
 
-        return this.http.get<YoutubeEventResponse>(`${this.ytUrlSegment}/api/timedtext?v=${vid}&${querySegments.join('&')}`);
-    }
+    return this.http.get<YoutubeEventResponse>(
+      `${this.ytUrlSegment}/api/timedtext?v=${vid}&${querySegments.join('&')}`
+    );
+  }
 }

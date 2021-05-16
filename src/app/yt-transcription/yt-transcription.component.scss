@@ -1,37 +1,35 @@
-@import '../../colors.scss'; 
+@import "../../colors.scss";
 
-.yt-transcription-container {
-    text-align: center;
-}
-
-form {
+#yt-transcription-container {
+  text-align: center;
+  form {
     margin-top: 32px;
-}
 
-button {
+    .submit-button {
+      bottom: 8px;
+      border-radius: 0px 12px 12px 0px;
+      padding: 8px;
+    }
+
+    .mat-form-field {
+      width: 320px;
+    }
+  }
+
+  button {
     background-color: $primary !important;
-}
+  }
 
-.submit-button {
-    bottom: 8px;
-    border-radius: 0px 12px 12px 0px;
-    padding: 8px;
-}
-
-.mat-form-field {
-    width: 320px;
-}
-
-.info-options {
+  .info-options {
     margin-bottom: 12px;
-}
-
-.video-duration {
-    margin-right: 16px;
+    .video-duration {
+      margin-right: 16px;
+    }
+  }
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-    .mat-form-field {
-        max-width: 220px;
-    }
+  .mat-form-field {
+    max-width: 220px;
+  }
 }

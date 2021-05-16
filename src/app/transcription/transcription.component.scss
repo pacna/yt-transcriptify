@@ -1,16 +1,15 @@
-@import '../../colors.scss';
+@import "../../colors.scss";
 
 .transcription-container {
-    font-size: 20px;
-    line-height: 32px;
-    background-color: $transcription;
-    max-width: 480px;
-    margin: auto;
+  font-size: 20px;
+  line-height: 32px;
+  background-color: $transcription;
+  max-width: 480px;
+  margin: auto;
 }
 
-
 @media (min-width: 320px) and (max-width: 480px) {
-    .transcription-container {
-        font-size: 16px;
-    }
+  .transcription-container {
+    font-size: 16px;
+  }
 }
