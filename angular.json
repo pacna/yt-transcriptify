@@ -127,8 +127,13 @@
               "devServerTarget": "angular-yt-transcription:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "angular-yt-transcription"
 }
