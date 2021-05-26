@@ -8,17 +8,17 @@ import { Observable } from 'rxjs';
 // Repo
 import { YoutubeEventResponse } from '../types/yt.types';
 import { UrlSegment } from './../types/url-segment.enum';
+import { environment } from './../../environments/environment';
 
 @Injectable()
 export class YoutubeCaptionService {
-  ytUrlSegment = '/youtube';
   constructor(private http: HttpClient) {}
 
   getUrlHtmlContent(urlSegment: string): Observable<string> {
     const headers = new HttpHeaders();
     headers.set('Content-Type', 'text/plain; charset=utf-8');
 
-    return this.http.get(`${this.ytUrlSegment}/${urlSegment}`, {
+    return this.http.get(`${environment.urlSegment}/${urlSegment}`, {
       headers,
       responseType: 'text',
     });
@@ -45,7 +45,9 @@ export class YoutubeCaptionService {
     querySegments.push('fmt=json3');
 
     return this.http.get<YoutubeEventResponse>(
-      `${this.ytUrlSegment}/api/timedtext?v=${vid}&${querySegments.join('&')}`
+      `${environment.urlSegment}/api/timedtext?v=${vid}&${querySegments.join(
+        '&'
+      )}`
     );
   }
 }
