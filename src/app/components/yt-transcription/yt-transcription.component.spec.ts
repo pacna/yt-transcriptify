@@ -9,10 +9,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 // Repo
-import { mockYtCaptionService } from './../service/mock.services.spec';
-import { YoutubeCaptionService } from '../service/youtube-caption.service';
+import { mockYtCaptionService } from '../../services/mock.services.spec';
+import { YoutubeCaptionService } from '../../services/youtube-caption.service';
 import { YtTranscriptionComponent } from './yt-transcription.component';
-import { MockTranscriptionComponent } from './../mock.components.spec';
+import { MockTranscriptionComponent } from '../../services/mock.components.spec';
 
 describe('YtTranscriptionComponent', () => {
   let component: YtTranscriptionComponent;
@@ -26,14 +26,13 @@ describe('YtTranscriptionComponent', () => {
         ReactiveFormsModule,
         MatInputModule,
         BrowserAnimationsModule,
-        FormsModule
+        FormsModule,
       ],
-      declarations: [ YtTranscriptionComponent, MockTranscriptionComponent],
+      declarations: [YtTranscriptionComponent, MockTranscriptionComponent],
       providers: [
-        { provide: YoutubeCaptionService, value: mockYtCaptionService}
-      ]
-    })
-    .compileComponents();
+        { provide: YoutubeCaptionService, value: mockYtCaptionService },
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

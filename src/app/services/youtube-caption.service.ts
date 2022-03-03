@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 
 // Repo
 import { YoutubeEventResponse } from '../types/yt.types';
-import { UrlSegment } from './../types/url-segment.enum';
-import { environment } from './../../environments/environment';
+import { UrlSegment } from '../types/url-segment.enum';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class YoutubeCaptionService {
