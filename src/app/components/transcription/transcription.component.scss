@@ -1,6 +1,6 @@
 @import "../../../colors.scss";
 
-.transcription-container {
+#transcription-container {
   font-size: 20px;
   line-height: 32px;
   background-color: $transcription;
@@ -9,7 +9,7 @@
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-  .transcription-container {
+  #transcription-container {
     font-size: 16px;
   }
 }

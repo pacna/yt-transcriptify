@@ -3,14 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 // Third Party
-import * as moment from 'moment';
 import * as download from 'downloadjs';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 // Others
-import { Event, Seg, YoutubeEventResponse } from '../../types/yt.types';
+import { Event, Seg, YoutubeEventResponse } from '../../types/api';
 import { YoutubeCaptionService } from '../../services/youtube-caption.service';
 
 @UntilDestroy()
@@ -44,6 +43,7 @@ export class YtTranscriptionComponent implements OnInit {
         this.captionSegments = response?.events
           ? this.getCaptions(response.events)
           : ['｡ﾟ･ (>﹏<) ･ﾟ｡ Oh no!'];
+        this.videoDuration = response?.events ? this.videoDuration : 0;
         this.canShowInfoOption = true;
       }
     );
@@ -66,10 +66,14 @@ export class YtTranscriptionComponent implements OnInit {
   }
 
   get duration(): string {
-    const time: moment.Duration = moment.duration(this.videoDuration);
-    return `${this.formatTime(time.hours())}:${this.formatTime(
-      time.minutes()
-    )}:${this.formatTime(time.seconds())}`;
+    const hours: number = Math.floor(
+      (this.videoDuration / (1000 * 60 * 60)) % 24
+    );
+    const mins: number = Math.floor((this.videoDuration / (1000 * 60)) % 60);
+    const secs: number = Math.floor((this.videoDuration / 1000) % 60);
+    return `${this.formatTime(hours)}:${this.formatTime(
+      mins
+    )}:${this.formatTime(secs)}`;
   }
 
   formatTime(time: number): string {

@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 // Repo
-import { YoutubeEventResponse } from '../types/yt.types';
-import { UrlSegment } from '../types/url-segment.enum';
+import { YoutubeEventResponse } from '../types/api/youtube-event-response';
+import { UrlSegment } from '../types/customs/url-segment.enum';
 import { environment } from '../../environments/environment';
 
 @Injectable()

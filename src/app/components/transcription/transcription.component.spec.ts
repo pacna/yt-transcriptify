@@ -10,9 +10,8 @@ describe('TranscriptionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TranscriptionComponent ]
-    })
-    .compileComponents();
+      declarations: [TranscriptionComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -33,7 +32,9 @@ describe('TranscriptionComponent', () => {
     component.ngOnChanges();
     fixture.detectChanges();
 
-    const text = fixture.nativeElement.querySelector('.transcription-container').innerText;
+    const text = fixture.nativeElement.querySelector(
+      '#transcription-container'
+    ).innerText;
 
     // ASSERT
     expect(text).toEqual(mockResponse[0]);

@@ -1,6 +1,6 @@
 {
   "name": "angular-yt-transcription",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,6 @@
     "test": "ng test --watch=false --browsers ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev:ssr": "ng run angular-yt-transcription:serve-ssr",
     "serve:ssr": "node dist/angular-yt-transcription/server/main.js",
     "build:ssr": "ng build && ng run angular-yt-transcription:server",
     "prerender": "ng run angular-yt-transcription:prerender"
@@ -33,7 +32,6 @@
     "express": "^4.15.2",
     "http-proxy-middleware": "^2.0.3",
     "material-design-icons": "^3.0.1",
-    "moment": "^2.29.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
