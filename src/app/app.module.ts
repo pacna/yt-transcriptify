@@ -11,6 +11,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { YtTranscriptionModule } from './components/yt-transcription/yt-transcription.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { APP_ENV_CONFIG } from './configs/app-env-config';
+import { environment } from './../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +24,12 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_ENV_CONFIG,
+      useValue: environment,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

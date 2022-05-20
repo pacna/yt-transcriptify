@@ -13,6 +13,7 @@ import { mockYtCaptionService } from '../../services/mock.services.spec';
 import { YoutubeCaptionService } from '../../services/youtube-caption.service';
 import { YtTranscriptionComponent } from './yt-transcription.component';
 import { MockTranscriptionComponent } from '../../services/mock.components.spec';
+import { APP_ENV_CONFIG } from '../../configs/app-env-config';
 
 describe('YtTranscriptionComponent', () => {
   let component: YtTranscriptionComponent;
@@ -31,6 +32,7 @@ describe('YtTranscriptionComponent', () => {
       declarations: [YtTranscriptionComponent, MockTranscriptionComponent],
       providers: [
         { provide: YoutubeCaptionService, value: mockYtCaptionService },
+        { provide: APP_ENV_CONFIG, useValue: { urlSegment: '/youtube' } },
       ],
     }).compileComponents();
   });

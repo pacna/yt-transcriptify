@@ -1,6 +1,6 @@
 // Angular
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 
 // Third Party
 import { Observable } from 'rxjs';
@@ -8,17 +8,21 @@ import { Observable } from 'rxjs';
 // Repo
 import { YoutubeEventResponse } from '../types/api/youtube-event-response';
 import { UrlSegment } from '../types/customs/url-segment.enum';
-import { environment } from '../../environments/environment';
+import { APP_ENV_CONFIG } from '../configs/app-env-config';
 
 @Injectable()
 export class YoutubeCaptionService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private readonly http: HttpClient,
+    @Inject(APP_ENV_CONFIG)
+    private readonly appEnvConfig: { urlSegment: string }
+  ) {}
 
   getUrlHtmlContent(urlSegment: string): Observable<string> {
     const headers = new HttpHeaders();
     headers.set('Content-Type', 'text/plain; charset=utf-8');
 
-    return this.http.get(`${environment.urlSegment}/${urlSegment}`, {
+    return this.http.get(`${this.appEnvConfig.urlSegment}/${urlSegment}`, {
       headers,
       responseType: 'text',
     });
@@ -45,9 +49,9 @@ export class YoutubeCaptionService {
     querySegments.push('fmt=json3');
 
     return this.http.get<YoutubeEventResponse>(
-      `${environment.urlSegment}/api/timedtext?v=${vid}&${querySegments.join(
-        '&'
-      )}`
+      `${
+        this.appEnvConfig.urlSegment
+      }/api/timedtext?v=${vid}&${querySegments.join('&')}`
     );
   }
 }

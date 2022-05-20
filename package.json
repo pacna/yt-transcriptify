@@ -10,7 +10,8 @@
     "e2e": "ng e2e",
     "serve:ssr": "node dist/angular-yt-transcription/server/main.js",
     "build:ssr": "ng build && ng run angular-yt-transcription:server",
-    "prerender": "ng run angular-yt-transcription:prerender"
+    "prerender": "ng run angular-yt-transcription:prerender",
+    "deploy": "ng deploy --base-href=https://pacna.github.io/angular-yt-transcription/"
   },
   "private": true,
   "dependencies": {
@@ -32,7 +33,7 @@
     "express": "^4.15.2",
     "http-proxy-middleware": "^2.0.3",
     "material-design-icons": "^3.0.1",
-    "rxjs": "~6.5.5",
+    "rxjs": "~7.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
   },
