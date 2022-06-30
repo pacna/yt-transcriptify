@@ -1,6 +1,6 @@
 // Angular
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 
 // Third Party
 import * as download from 'downloadjs';
@@ -23,9 +23,9 @@ export class YtTranscriptionComponent implements OnInit {
   captionSegments: string[];
   videoDuration: number;
   canShowInfoOption = false;
-  linkControl = new FormControl(null, [Validators.required]);
+  linkControl = new UntypedFormControl(null, [Validators.required]);
 
-  ytLinkGroup = new FormGroup({
+  ytLinkGroup = new UntypedFormGroup({
     link: this.linkControl,
   });
 
