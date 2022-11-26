@@ -1,4 +1,3 @@
-// Repo
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Angular Yt Transcription';
+  title = 'angular-yt-transcription';
 }
