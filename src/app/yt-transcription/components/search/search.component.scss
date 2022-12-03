@@ -1,0 +1,14 @@
+@import "colors";
+
+form {
+  mat-form-field {
+    width: 320px;
+  }
+
+  button {
+    background-color: $primary !important;
+    bottom: 10px;
+    border-radius: 0px 12px 12px 0px;
+    padding: 28px 12px;
+  }
+}
