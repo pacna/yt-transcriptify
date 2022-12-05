@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SearchComponent } from './components/search/search.component';
 import { TranscriptionComponent } from './components/transcription/transcription.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -9,9 +8,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { OverviewComponent } from './components/overview/overview.component';
 import { YoutubeCaptionService } from './services/youtube-caption.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [SearchComponent, TranscriptionComponent, OverviewComponent],
+  declarations: [TranscriptionComponent, OverviewComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,
@@ -20,6 +20,7 @@ import { YoutubeCaptionService } from './services/youtube-caption.service';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    MatIconModule,
   ],
   exports: [OverviewComponent],
   providers: [YoutubeCaptionService],

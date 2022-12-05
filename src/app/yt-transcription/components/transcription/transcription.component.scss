@@ -1,16 +1,12 @@
 @import "colors";
 
 div {
-  font-size: 20px;
-  line-height: 32px;
   background-color: $transcription;
+  line-height: 32px;
   max-width: 480px;
   margin: auto;
-  min-height: 400px;
-}
 
-@media (min-width: 320px) and (max-width: 480px) {
-  div {
-    font-size: 16px;
+  p {
+    font-size: 1.3em;
   }
 }

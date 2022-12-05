@@ -6,11 +6,12 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "ng test --watch=false --browsers ChromeHeadless",
     "dev:ssr": "ng run angular-yt-transcription:serve-ssr",
     "serve:ssr": "node dist/angular-yt-transcription/server/main.js",
     "build:ssr": "ng build && ng run angular-yt-transcription:server",
-    "prerender": "ng run angular-yt-transcription:prerender"
+    "prerender": "ng run angular-yt-transcription:prerender",
+    "deploy": "ng deploy --base-href=https://pacna.github.io/angular-yt-transcription/"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +28,7 @@
     "@angular/router": "^15.0.0",
     "@ngneat/until-destroy": "^9.2.2",
     "@nguniversal/express-engine": "^15.0.0",
+    "angular-cli-ghpages": "^1.0.5",
     "express": "^4.15.2",
     "http-proxy-middleware": "^2.0.6",
     "rxjs": "~7.5.0",

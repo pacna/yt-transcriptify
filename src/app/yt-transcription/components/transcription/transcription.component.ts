@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { TranscriptionInfo } from '../../types/transcription-info';
 
 @Component({
   selector: 'transcription',
@@ -7,12 +6,9 @@ import { TranscriptionInfo } from '../../types/transcription-info';
   styleUrls: ['./transcription.component.scss'],
 })
 export class TranscriptionComponent {
-  @Input() set transcription(transcription: TranscriptionInfo) {
-    if (transcription == null) {
-      this.transcriptions = ['｡ﾟ･ (>﹏<) ･ﾟ｡ Oh no!'];
-    } else {
-      this.transcriptions = transcription.captions;
-    }
+  @Input() set transcription(captionSegments: string[]) {
+    if (!captionSegments) return;
+    this.transcriptions = captionSegments;
   }
 
   transcriptions: string[] = [];
