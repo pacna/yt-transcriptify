@@ -1,5 +1,7 @@
+// Angular
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+// Self
 import { TopNavComponent } from './top-nav.component';
 
 describe('TopNavComponent', () => {
@@ -8,9 +10,8 @@ describe('TopNavComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TopNavComponent ]
-    })
-    .compileComponents();
+      imports: [TopNavComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TopNavComponent);
     component = fixture.componentInstance;

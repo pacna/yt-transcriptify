@@ -16,7 +16,7 @@
 
 <section *ngIf="readableDuration">
   <span>Video duration: {{ readableDuration }}</span>
-  <button mat-icon-button type="button">
+  <button mat-icon-button type="button" (click)="download()">
     <mat-icon>file_download</mat-icon>
   </button>
 </section>

@@ -1,10 +1,19 @@
+// Angular
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+// Third party
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Observable, of, switchMap } from 'rxjs';
-import { YoutubeCaptionService } from '../../services/youtube-caption.service';
-import { YoutubeEventResponse } from '../../types/youtube-event-response';
-import { Event, Seg, TranscriptionInfo } from './../../types';
+
+// Self
+import { YoutubeCaptionService, DownloadService } from '../../services';
+import {
+  Event,
+  Seg,
+  TranscriptionInfo,
+  YoutubeEventResponse,
+} from './../../types';
 
 @UntilDestroy()
 @Component({
@@ -20,7 +29,10 @@ export class OverviewComponent {
     link: this.linkControl,
   });
 
-  constructor(private readonly youtubeCaptionService: YoutubeCaptionService) {}
+  constructor(
+    private readonly youtubeCaptionService: YoutubeCaptionService,
+    private readonly downloadService: DownloadService
+  ) {}
 
   submit(): void {
     const urlSegments: string[] = this.linkControl.value.split('/');
@@ -43,6 +55,13 @@ export class OverviewComponent {
         this.readableDuration = '--:--:--';
       },
     });
+  }
+
+  download(): void {
+    this.downloadService.download(
+      this.captionSegments.join(' '),
+      'yt-transcription.txt'
+    );
   }
 
   private getCaptionsAndDurations(events: Event[]): TranscriptionInfo {

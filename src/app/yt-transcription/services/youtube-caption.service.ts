@@ -1,6 +1,11 @@
+// Angular
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+// Third party
 import { Observable } from 'rxjs';
+
+// Self
 import { YoutubeEventResponse } from '../types/youtube-event-response';
 import { APP_ENV_CONFIG } from '../configs/app-env-config';
 
@@ -13,7 +18,7 @@ export class YoutubeCaptionService {
   ) {}
 
   getUrlHtmlContent(urlSegment: string): Observable<string> {
-    const headers = new HttpHeaders();
+    const headers: HttpHeaders = new HttpHeaders();
     headers.set('Content-Type', 'text/plain; charset=utf-8');
 
     return this.http.get(`${this.appEnvConfig.urlSegment}/${urlSegment}`, {

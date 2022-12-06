@@ -1,10 +1,27 @@
+// Angular
 import { TestBed } from '@angular/core/testing';
+
+// Shared
+import {
+  MockAppLayoutComponent,
+  MockTopNavComponent,
+} from './shared/testing/mocks.component.spec';
+
+// YT Transcription
+import { MockOverviewComponent } from './yt-transcription/testing';
+
+// Self
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      declarations: [
+        AppComponent,
+        MockAppLayoutComponent,
+        MockTopNavComponent,
+        MockOverviewComponent,
+      ],
     }).compileComponents();
   });
 
@@ -12,14 +29,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'angular-yt-transcription app is running!'
-    );
   });
 });

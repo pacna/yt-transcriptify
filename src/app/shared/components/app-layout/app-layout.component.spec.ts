@@ -1,5 +1,7 @@
+// Angular
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+// Self
 import { AppLayoutComponent } from './app-layout.component';
 
 describe('AppLayoutComponent', () => {
@@ -8,9 +10,8 @@ describe('AppLayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AppLayoutComponent ]
-    })
-    .compileComponents();
+      imports: [AppLayoutComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AppLayoutComponent);
     component = fixture.componentInstance;
