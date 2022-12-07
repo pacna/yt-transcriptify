@@ -5,8 +5,10 @@ div {
   line-height: 32px;
   max-width: 480px;
   margin: auto;
+  padding: 16px;
 
   p {
     font-size: 1.3em;
+    margin-bottom: 0;
   }
 }

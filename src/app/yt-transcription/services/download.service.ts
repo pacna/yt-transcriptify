@@ -13,6 +13,7 @@ export class DownloadService {
     el.download = filename;
     document.body.appendChild(el);
     el.click();
+    window.URL.revokeObjectURL(el.href);
     document.body.removeChild(el);
   }
 }

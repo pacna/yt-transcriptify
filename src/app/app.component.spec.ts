@@ -2,10 +2,7 @@
 import { TestBed } from '@angular/core/testing';
 
 // Shared
-import {
-  MockAppLayoutComponent,
-  MockTopNavComponent,
-} from './shared/testing/mocks.component.spec';
+import { MockAppLayoutComponent, MockTopNavComponent } from './shared/testing';
 
 // YT Transcription
 import { MockOverviewComponent } from './yt-transcription/testing';

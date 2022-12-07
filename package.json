@@ -9,7 +9,7 @@
     "test": "ng test --watch=false --browsers ChromeHeadless",
     "dev:ssr": "ng run angular-yt-transcription:serve-ssr",
     "serve:ssr": "node dist/angular-yt-transcription/server/main.js",
-    "build:ssr": "ng build && ng run angular-yt-transcription:server",
+    "build:ssr": "ng build --configuration=ssr && ng run angular-yt-transcription:server",
     "prerender": "ng run angular-yt-transcription:prerender",
     "deploy": "ng deploy --base-href=https://pacna.github.io/angular-yt-transcription/"
   },

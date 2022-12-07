@@ -54,6 +54,14 @@
               ],
               "outputHashing": "all"
             },
+            "ssr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ssr.ts"
+                }
+              ]
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -77,6 +85,9 @@
             },
             "development": {
               "browserTarget": "angular-yt-transcription:build:development"
+            },
+            "ssr": {
+              "browserTarget": "angular-yt-transcription:build:ssr"
             }
           },
           "defaultConfiguration": "development"
@@ -125,6 +136,14 @@
                 }
               ]
             },
+            "ssr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ssr.ts"
+                }
+              ]
+            },
             "development": {
               "optimization": false,
               "sourceMap": true,
@@ -144,6 +163,10 @@
             "production": {
               "browserTarget": "angular-yt-transcription:build:production",
               "serverTarget": "angular-yt-transcription:server:production"
+            },
+            "ssr": {
+              "browserTarget": "angular-yt-transcription:build:ssr",
+              "serverTarget": "angular-yt-transcription:server:ssr"
             }
           },
           "defaultConfiguration": "development"
@@ -161,9 +184,13 @@
             "development": {
               "browserTarget": "angular-yt-transcription:build:development",
               "serverTarget": "angular-yt-transcription:server:development"
+            },
+            "ssr": {
+              "browserTarget": "angular-yt-transcription:build:ssr",
+              "serverTarget": "angular-yt-transcription:server:ssr"
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "ssr"
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy"

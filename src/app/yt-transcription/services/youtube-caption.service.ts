@@ -35,15 +35,19 @@ export class YoutubeCaptionService {
     urlSegments.forEach((urlSegment: string, index: number) => {
       // already added the youtube url in the url string
       // no need to add it again
-      if (index) {
-        if (urlSegment.includes('lang=')) {
-          // set it to english caption
-          querySegments.push('lang=en');
-        } else {
-          querySegments.push(urlSegment);
-        }
+      if (!index) {
+        return;
       }
+
+      if (urlSegment.includes('lang=')) {
+        // set it to english caption
+        querySegments.push('lang=en');
+        return;
+      }
+
+      querySegments.push(urlSegment);
     });
+
     // format the response to be json
     querySegments.push('fmt=json3');
 
