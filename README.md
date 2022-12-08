@@ -1,4 +1,4 @@
-# Angular Yt Transcription
+# Angular YT Transcription
 
 Angular Yt Transcription is a web app that displays a visual transcription of a YouTube video.
 
