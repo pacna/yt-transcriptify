@@ -1,0 +1,39 @@
+@import "colors";
+
+form {
+  mat-form-field {
+    width: 320px;
+  }
+
+  button {
+    bottom: 10px;
+    border-radius: 0px 12px 12px 0px;
+    padding: 28px 12px;
+  }
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+
+  span {
+    font-size: 1.2em;
+  }
+}
+
+button {
+  background-color: $primary !important;
+}
+
+transcription {
+  display: block;
+  margin-top: 12px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  mat-form-field {
+    max-width: 220px;
+  }
+}

@@ -1,28 +1,29 @@
 // Angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// Material
-import { MatToolbarModule } from '@angular/material/toolbar';
+// YT Transcription
+import { APP_ENV_CONFIG } from './yt-transcription/configs';
+import { YTTranscriptionModule } from './yt-transcription';
 
-// Repo
-import { YtTranscriptionModule } from './components/yt-transcription/yt-transcription.module';
-import { AppRoutingModule } from './app-routing.module';
+// Shared
+import { TopNavComponent } from './shared/components/top-nav/top-nav.component';
+import { AppLayoutComponent } from './shared/components/app-layout/app-layout.component';
+
+// Self
 import { AppComponent } from './app.component';
-import { APP_ENV_CONFIG } from './configs/app-env-config';
-import { environment } from './../environments/environment';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    YtTranscriptionModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule,
-    MatToolbarModule,
-    HttpClientModule,
     BrowserAnimationsModule,
+    YTTranscriptionModule,
+    // standalone
+    TopNavComponent,
+    AppLayoutComponent,
   ],
   providers: [
     {

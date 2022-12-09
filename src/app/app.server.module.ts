@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
 
-// Repo
+// Self
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
 

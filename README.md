@@ -1,4 +1,4 @@
-# Angular Yt Transcription
+# Angular YT Transcription
 
 Angular Yt Transcription is a web app that displays a visual transcription of a YouTube video.
 
@@ -8,9 +8,9 @@ Try it out [here](https://pacna.github.io/angular-yt-transcription/) (**_note_**
 
 ## Prerequisites
 
-1. [nodejs](https://nodejs.org/en/)
-2. [docker](https://docs.docker.com/install/) (optional)
-3. [docker-compose](https://docs.docker.com/compose/install/) (optional)
+1. [Node.js](https://nodejs.org/en/)
+2. [Docker](https://docs.docker.com/install/) (optional)
+3. [Docker Compose](https://docs.docker.com/compose/install/) (optional)
 
 ## Installation
 
