@@ -1,6 +1,6 @@
 # Angular YT Transcription
 
-Angular Yt Transcription is a web app that displays a visual transcription of a YouTube video.
+Angular YT Transcription is a web app that displays a visual transcription of a YouTube video.
 
 ![angular-yt-transcription](./docs/angular-yt-transcription.png)
 
