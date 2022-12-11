@@ -1,4 +1,4 @@
-// Repo
+// Self
 import { Event } from './event';
 
 export interface YoutubeEventResponse {

@@ -1,4 +1,4 @@
-// Repo
+// Self
 import { Seg } from './seg';
 
 export interface Event {

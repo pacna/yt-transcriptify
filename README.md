@@ -1,5 +1,7 @@
 # Angular YT Transcription
 
+<img alt="Test CI passing" src="https://github.com/pacna/angular-yt-transcription/workflows/Test%20CI/badge.svg" />
+
 Angular YT Transcription is a web app that displays a visual transcription of a YouTube video.
 
 ![angular-yt-transcription](./docs/angular-yt-transcription.png)

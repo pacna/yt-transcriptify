@@ -3,6 +3,9 @@
 form {
   mat-form-field {
     width: 320px;
+    ::ng-deep.mdc-text-field {
+      border-top-right-radius: unset;
+    }
   }
 
   button {
