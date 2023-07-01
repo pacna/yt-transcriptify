@@ -15,10 +15,7 @@ import { AppServerModule } from './src/main.server';
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
-  const distFolder = join(
-    process.cwd(),
-    'dist/angular-yt-transcription/browser'
-  );
+  const distFolder = join(process.cwd(), 'dist/yt-transcriptify/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html'))
     ? 'index.original.html'
     : 'index';

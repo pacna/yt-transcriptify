@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-yt-transcription": {
+    "yt-transcriptify": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -16,7 +16,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-yt-transcription/browser",
+            "outputPath": "dist/yt-transcriptify/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -76,18 +76,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-yt-transcription:build",
+            "browserTarget": "yt-transcriptify:build",
             "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-yt-transcription:build:production"
+              "browserTarget": "yt-transcriptify:build:production"
             },
             "development": {
-              "browserTarget": "angular-yt-transcription:build:development"
+              "browserTarget": "yt-transcriptify:build:development"
             },
             "ssr": {
-              "browserTarget": "angular-yt-transcription:build:ssr"
+              "browserTarget": "yt-transcriptify:build:ssr"
             }
           },
           "defaultConfiguration": "development"
@@ -95,7 +95,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-yt-transcription:build"
+            "browserTarget": "yt-transcriptify:build"
           }
         },
         "test": {
@@ -118,7 +118,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/angular-yt-transcription/server",
+            "outputPath": "dist/yt-transcriptify/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "inlineStyleLanguage": "scss",
@@ -157,16 +157,16 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "angular-yt-transcription:build:development",
-              "serverTarget": "angular-yt-transcription:server:development"
+              "browserTarget": "yt-transcriptify:build:development",
+              "serverTarget": "yt-transcriptify:server:development"
             },
             "production": {
-              "browserTarget": "angular-yt-transcription:build:production",
-              "serverTarget": "angular-yt-transcription:server:production"
+              "browserTarget": "yt-transcriptify:build:production",
+              "serverTarget": "yt-transcriptify:server:production"
             },
             "ssr": {
-              "browserTarget": "angular-yt-transcription:build:ssr",
-              "serverTarget": "angular-yt-transcription:server:ssr"
+              "browserTarget": "yt-transcriptify:build:ssr",
+              "serverTarget": "yt-transcriptify:server:ssr"
             }
           },
           "defaultConfiguration": "development"
@@ -178,16 +178,16 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-yt-transcription:build:production",
-              "serverTarget": "angular-yt-transcription:server:production"
+              "browserTarget": "yt-transcriptify:build:production",
+              "serverTarget": "yt-transcriptify:server:production"
             },
             "development": {
-              "browserTarget": "angular-yt-transcription:build:development",
-              "serverTarget": "angular-yt-transcription:server:development"
+              "browserTarget": "yt-transcriptify:build:development",
+              "serverTarget": "yt-transcriptify:server:development"
             },
             "ssr": {
-              "browserTarget": "angular-yt-transcription:build:ssr",
-              "serverTarget": "angular-yt-transcription:server:ssr"
+              "browserTarget": "yt-transcriptify:build:ssr",
+              "serverTarget": "yt-transcriptify:server:ssr"
             }
           },
           "defaultConfiguration": "ssr"

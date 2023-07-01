@@ -1,16 +1,16 @@
-# Angular YT Transcription
+# YT Transcriptify
 
-<img alt="Test CI passing" src="https://github.com/pacna/angular-yt-transcription/workflows/Test%20CI/badge.svg" />
+<img alt="Test CI passing" src="https://github.com/pacna/yt-transcriptify/workflows/Test%20CI/badge.svg" />
 
-Angular YT Transcription is a web application designed to display a visual transcription of any YouTube video. It provides users with a visual format of the video's transcript, making it easier to read and follow along.
+YT Transcriptify is a web application designed to display a visual transcription of any YouTube video. It provides users with a visual format of the video's transcript, making it easier to read and follow along.
 
-![angular-yt-transcription](./docs/angular-yt-transcription.png)
+![yt-transcriptify](./docs/yt-transcriptify.png)
 
-You can try it out [here](https://pacna.github.io/angular-yt-transcription/) (**_note_**: you may need to install an [extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf/related?hl=en) to bypass any CORS related issues)
+You can try it out [here](https://pacna.github.io/yt-transcriptify/) (**_note_**: you may need to install an [extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf/related?hl=en) to bypass any CORS related issues)
 
 ## Ubuntu Prerequisites
 
-Before running Angular YT Transcription, make sure you have the following dependencies installed on your system:
+Before running YT Transcriptify, make sure you have the following dependencies installed on your system:
 
 1. [Node.js](https://nodejs.org/en/)
 2. [Docker](https://docs.docker.com/install/) (optional)
@@ -66,7 +66,7 @@ $ make test
 
 ## Docker (Optional)
 
-If you prefer to run Angular YT Transcription in a Docker container, you can use Docker Compose:
+If you prefer to run YT Transcriptify in a Docker container, you can use Docker Compose:
 
 ```bash
 $ docker-compose up --build

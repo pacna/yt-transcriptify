@@ -12,5 +12,5 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   imports: [MatToolbarModule],
 })
 export class TopNavComponent {
-  title: string = 'Angular YT Transcription';
+  title: string = 'YT Transcriptify';
 }

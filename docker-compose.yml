@@ -1,7 +1,7 @@
 version: "2"
 
 services:
-  angular-yt-transcription:
+  yt-transcriptify:
     build: .
     ports:
       - 4000:4000
