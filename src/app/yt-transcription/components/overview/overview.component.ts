@@ -1,9 +1,9 @@
 // Angular
-import { Component } from '@angular/core';
+import { Component, DestroyRef, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 // Third party
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Observable, of, switchMap } from 'rxjs';
 
 // Self
@@ -15,13 +15,14 @@ import {
   YoutubeEventResponse,
 } from './../../types';
 
-@UntilDestroy()
 @Component({
   selector: 'overview',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss'],
 })
 export class OverviewComponent {
+  private _destroyRef: DestroyRef = inject<DestroyRef>(DestroyRef);
+
   readableDuration: string;
   captionSegments: string[];
   linkControl = new FormControl<string>(null, [Validators.required]);
@@ -112,7 +113,7 @@ export class OverviewComponent {
     urlSegment: string
   ): Observable<YoutubeEventResponse | null> {
     return this.youtubeCaptionService.getUrlHtmlContent(urlSegment).pipe(
-      untilDestroyed(this),
+      takeUntilDestroyed(this._destroyRef),
       switchMap((response: string) => {
         const timedTextRegex = new RegExp(
           /playerCaptionsTracklistRenderer.*?(youtube.com\/api\/timedtext.*?)"/
