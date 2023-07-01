@@ -1,5 +1,5 @@
 // Angular
-import { NgModule } from '@angular/core';
+import { APP_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -18,7 +18,6 @@ import { environment } from '../environments/environment';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     YTTranscriptionModule,
     // standalone
@@ -29,6 +28,10 @@ import { environment } from '../environments/environment';
     {
       provide: APP_ENV_CONFIG,
       useValue: environment,
+    },
+    {
+      provide: APP_ID,
+      useValue: 'serverApp',
     },
   ],
   bootstrap: [AppComponent],
