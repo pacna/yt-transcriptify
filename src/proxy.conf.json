@@ -1,10 +1,10 @@
 {
-    "/youtube/*": {
-        "target": "https://www.youtube.com/",
-        "secure": true,
-        "changeOrigin": true,
-        "pathRewrite": {
-            "^/youtube/*": ""
-        }
+  "/youtube/*": {
+    "target": "https://www.youtube.com/",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/youtube/*": ""
     }
+  }
 }

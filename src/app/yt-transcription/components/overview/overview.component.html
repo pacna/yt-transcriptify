@@ -1,0 +1,26 @@
+<form [formGroup]="ytLinkGroup" (ngSubmit)="submit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Youtube link</mat-label>
+    <input matInput formControlName="link" />
+  </mat-form-field>
+  <button
+    [disabled]="!ytLinkGroup.valid"
+    mat-flat-button
+    color="accent"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+
+<section *ngIf="readableDuration">
+  <span>Video duration: {{ readableDuration }}</span>
+  <button mat-icon-button type="button" (click)="download()">
+    <mat-icon>file_download</mat-icon>
+  </button>
+</section>
+<iframe *ngIf="shouldShowYoutubeLink" [src]="youtubeLink | safe"> </iframe>
+<transcription
+  *ngIf="captionSegments"
+  [transcription]="captionSegments"
+></transcription>
