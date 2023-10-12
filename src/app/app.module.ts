@@ -1,30 +1,39 @@
 // Angular
-import { NgModule } from '@angular/core';
+import { APP_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// Material
-import { MatToolbarModule } from '@angular/material/toolbar';
+// YT Transcription
+import { APP_ENV_CONFIG } from './yt-transcription/configs';
+import { YTTranscriptionModule } from './yt-transcription';
 
-// Repo
-import { YtTranscriptionModule } from './yt-transcription/yt-transcription.module';
-import { AppRoutingModule } from './app-routing.module';
+// Shared
+import { TopNavComponent } from './shared/components/top-nav/top-nav.component';
+import { AppLayoutComponent } from './shared/components/app-layout/app-layout.component';
+
+// Self
 import { AppComponent } from './app.component';
+import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
-    YtTranscriptionModule,
-    BrowserModule,
-    AppRoutingModule,
-    MatToolbarModule,
-    HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    YTTranscriptionModule,
+    // standalone
+    TopNavComponent,
+    AppLayoutComponent,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: APP_ENV_CONFIG,
+      useValue: environment,
+    },
+    {
+      provide: APP_ID,
+      useValue: 'serverApp',
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

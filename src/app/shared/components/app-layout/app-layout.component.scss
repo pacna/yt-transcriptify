@@ -1,0 +1,17 @@
+#top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#main-content {
+  padding: 24px;
+  text-align: center;
+  overflow: auto;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
