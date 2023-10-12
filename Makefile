@@ -1,40 +1,41 @@
 ## ----------------------------------------------------------------------
 ## The purpose of this Makefile is to simplify common development tasks.
 ## ----------------------------------------------------------------------
+## Usage:
+##   - make prod         : Run the app in production mode
+##   - make develop      : Run the app locally
+##   - make install      : Install node module dependencies
+##   - make test         : Run tests
+##   - make docker       : Run the app in a Docker container
+##   - make deploy       : Build and deploy to GitHub Pages
+##   - make help         : Show available commands and descriptions
 ##
 
-.PHONY:run
-run: ## run the app in production mode
-##
+.PHONY:prod
+prod:
 	npm run build:ssr
 	npm run serve:ssr
 
-.PHONY:local
-local: ## run the app locally
-##
+.PHONY:develop
+develop:
 	npm run start
 
 .PHONY:install
-install: ## install node modules dependencies
-##
+install:
 	npm ci
 
 .PHONY:test
-test: ## run tests
-##
+test:
 	npm test
 
 .PHONY:docker
-docker: ## run the app inside docker
-##
+docker:
 	docker-compose up --build
 
 .PHONY:deploy
-deploy: ## run the app to GH page
-##
+deploy:
 	bash ./build-and-deploy.sh
 
 .PHONY:help
-help: ## Show this help
-##
+help:
 	@sed -ne '/@sed/!s/##//p' $(MAKEFILE_LIST)

@@ -36,7 +36,7 @@ To run the app locally, use:
 # run
 $ npm start
 # or using make
-$ make local
+$ make develop
 ```
 
 To run the app in production mode, use:
@@ -49,7 +49,7 @@ $ npm run build:ssr
 $ npm run serve:ssr
 
 # or using make
-$ make run
+$ make prod
 ```
 
 ## Running Tests
