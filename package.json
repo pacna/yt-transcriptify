@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --watch=false --browsers ChromeHeadless",
+    "test": "ng test --no-watch --no-progress --browsers=ChromeHeadless",
     "dev:ssr": "ng run yt-transcriptify:serve-ssr",
     "serve:ssr": "node dist/yt-transcriptify/server/main.js",
     "build:ssr": "ng build --configuration=ssr && ng run yt-transcriptify:server",
