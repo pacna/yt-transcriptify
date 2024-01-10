@@ -1,4 +1,4 @@
-export interface TranscriptionInfo {
+export type TranscriptionInfo = {
   captions: string[];
   readableDuration: string;
-}
+};
