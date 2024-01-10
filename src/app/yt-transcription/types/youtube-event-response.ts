@@ -1,6 +1,6 @@
 // Self
 import { Event } from './event';
 
-export interface YoutubeEventResponse {
+export type YoutubeEventResponse = {
   events: Event[];
-}
+};
