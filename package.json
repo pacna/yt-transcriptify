@@ -4,14 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production --base-href /yt-transcriptify/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --no-watch --no-progress --browsers=ChromeHeadless",
     "dev:ssr": "ng run yt-transcriptify:serve-ssr",
     "serve:ssr": "node dist/yt-transcriptify/server/main.js",
     "build:ssr": "ng build --configuration=ssr && ng run yt-transcriptify:server",
-    "prerender": "ng run yt-transcriptify:prerender",
-    "deploy": "ng deploy --base-href=https://pacna.github.io/yt-transcriptify/"
+    "prerender": "ng run yt-transcriptify:prerender"
   },
   "private": true,
   "dependencies": {
