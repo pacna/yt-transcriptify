@@ -1,7 +1,4 @@
-// Angular
 import { HttpClient } from '@angular/common/http';
-
-// Self
 import { YoutubeCaptionService, DownloadService } from '../services';
 
 export class SpiesService {

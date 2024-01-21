@@ -8,3 +8,7 @@ export type Event = {
 export type Seg = {
   utf8: string;
 };
+
+export type YoutubeEventResponse = {
+  events: Event[];
+};
