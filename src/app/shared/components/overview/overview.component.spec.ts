@@ -1,16 +1,12 @@
-// Angular
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-// Material
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
-// Self
 import { SpiesService } from '../../testing';
 import { YoutubeCaptionService, DownloadService } from '../../services';
 import { OverviewComponent } from './overview.component';
+import { APP_ENV_CONFIG } from '../../../app-env-config';
 
 describe('OverviewComponent', () => {
   let component: OverviewComponent;
@@ -18,13 +14,13 @@ describe('OverviewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [OverviewComponent],
       imports: [
         ReactiveFormsModule,
         FormsModule,
         MatFormFieldModule,
         MatInputModule,
         BrowserAnimationsModule,
+        OverviewComponent,
       ],
       providers: [
         {
@@ -35,6 +31,7 @@ describe('OverviewComponent', () => {
           provide: DownloadService,
           useValue: SpiesService.createDownloadServiceSpy(),
         },
+        { provide: APP_ENV_CONFIG, useValue: { urlSegment: '/youtube' } },
       ],
     }).compileComponents();
 

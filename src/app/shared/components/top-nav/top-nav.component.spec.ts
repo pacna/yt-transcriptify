@@ -1,7 +1,4 @@
-// Angular
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-// Self
 import { TopNavComponent } from './top-nav.component';
 
 describe('TopNavComponent', () => {

@@ -1,13 +1,8 @@
-// Angular
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-// Third party
 import { Observable } from 'rxjs';
-
-// Self
 import { YoutubeEventResponse } from '../types/youtube-event-response';
-import { APP_ENV_CONFIG } from '../configs/app-env-config';
+import { APP_ENV_CONFIG } from '../../app-env-config';
 
 @Injectable()
 export class YoutubeCaptionService {

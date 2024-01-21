@@ -1,7 +1,4 @@
-// Angular
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-// Self
 import { AppLayoutComponent } from './app-layout.component';
 
 describe('AppLayoutComponent', () => {

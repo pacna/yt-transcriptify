@@ -1,15 +1,10 @@
-// Angular
 import { APP_BASE_HREF } from '@angular/common';
 import { ngExpressEngine } from '@nguniversal/express-engine';
-
-// Third party
 import 'zone.js/node';
 import * as express from 'express';
 import { existsSync } from 'fs';
 import { join } from 'path';
 import { createProxyMiddleware } from 'http-proxy-middleware';
-
-// Self
 import { AppServerModule } from './src/main.server';
 
 // The Express app is exported so that it can be used by serverless Functions.

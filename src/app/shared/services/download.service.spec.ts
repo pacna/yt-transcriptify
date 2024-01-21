@@ -1,7 +1,4 @@
-// Angular
 import { TestBed } from '@angular/core/testing';
-
-// Self
 import { DownloadService } from './download.service';
 
 describe('DownloadService', () => {

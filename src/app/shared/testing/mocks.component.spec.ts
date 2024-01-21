@@ -1,4 +1,3 @@
-// Angular
 import { Component } from '@angular/core';
 
 @Component({
@@ -14,3 +13,10 @@ export class MockAppLayoutComponent {}
   template: '',
 })
 export class MockTopNavComponent {}
+
+@Component({
+  // tslint:disable-next-line: component-selector
+  selector: 'overview',
+  template: '',
+})
+export class MockOverviewComponent {}

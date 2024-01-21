@@ -192,9 +192,6 @@
             }
           },
           "defaultConfiguration": "ssr"
-        },
-        "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

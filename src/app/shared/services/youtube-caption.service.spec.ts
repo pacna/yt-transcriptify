@@ -1,14 +1,9 @@
-// Angular
 import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-
-// Third party
 import { of } from 'rxjs';
-
-// Self
-import { SpiesService } from '../testing';
-import { APP_ENV_CONFIG } from '../configs';
 import { YoutubeCaptionService } from './youtube-caption.service';
+import { APP_ENV_CONFIG } from '../../../app/app-env-config';
+import { SpiesService } from '../testing/spies.service.spec';
 
 describe('YoutubeCaptionService', () => {
   let service: YoutubeCaptionService;

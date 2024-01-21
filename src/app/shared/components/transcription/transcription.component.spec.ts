@@ -1,7 +1,4 @@
-// Angular
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-// Self
 import { TranscriptionComponent } from './transcription.component';
 
 describe('TranscriptionComponent', () => {
@@ -10,7 +7,7 @@ describe('TranscriptionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TranscriptionComponent],
+      imports: [TranscriptionComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TranscriptionComponent);

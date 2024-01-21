@@ -6,8 +6,6 @@
 ##   - make develop      : Run the app locally
 ##   - make install      : Install node module dependencies
 ##   - make test         : Run tests
-##   - make docker       : Run the app in a Docker container
-##   - make deploy       : Build and deploy to GitHub Pages
 ##   - make help         : Show available commands and descriptions
 ##
 
@@ -27,14 +25,6 @@ install:
 .PHONY:test
 test:
 	npm test
-
-.PHONY:docker
-docker:
-	docker-compose up --build
-
-.PHONY:deploy
-deploy:
-	bash ./build-and-deploy.sh
 
 .PHONY:help
 help:
