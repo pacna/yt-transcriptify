@@ -1,13 +1,9 @@
-// Angular
 import { TestBed } from '@angular/core/testing';
-
-// Shared
-import { MockAppLayoutComponent, MockTopNavComponent } from './shared/testing';
-
-// YT Transcription
-import { MockOverviewComponent } from './yt-transcription/testing';
-
-// Self
+import {
+  MockAppLayoutComponent,
+  MockOverviewComponent,
+  MockTopNavComponent,
+} from './shared/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {

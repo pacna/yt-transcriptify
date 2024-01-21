@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { SpiesService } from '../../testing';
 import { YoutubeCaptionService, DownloadService } from '../../services';
 import { OverviewComponent } from './overview.component';
+import { APP_ENV_CONFIG } from '../../../app-env-config';
 
 describe('OverviewComponent', () => {
   let component: OverviewComponent;
@@ -13,13 +14,13 @@ describe('OverviewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [OverviewComponent],
       imports: [
         ReactiveFormsModule,
         FormsModule,
         MatFormFieldModule,
         MatInputModule,
         BrowserAnimationsModule,
+        OverviewComponent,
       ],
       providers: [
         {
@@ -30,6 +31,7 @@ describe('OverviewComponent', () => {
           provide: DownloadService,
           useValue: SpiesService.createDownloadServiceSpy(),
         },
+        { provide: APP_ENV_CONFIG, useValue: { urlSegment: '/youtube' } },
       ],
     }).compileComponents();
 
