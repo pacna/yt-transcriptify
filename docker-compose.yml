@@ -1,7 +1,0 @@
-version: "2"
-
-services:
-  yt-transcriptify:
-    build: .
-    ports:
-      - 4000:4000

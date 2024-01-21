@@ -13,9 +13,7 @@ You can try it out [here](https://pacna.github.io/yt-transcriptify/) (**_note_**
 Before running YT Transcriptify, make sure you have the following dependencies installed on your system:
 
 1. [Node.js](https://nodejs.org/en/)
-2. [Docker](https://docs.docker.com/install/) (optional)
-3. [Docker Compose](https://docs.docker.com/compose/install/) (optional)
-4. [Make](https://www.gnu.org/software/make/) (optional)
+2. [Make](https://www.gnu.org/software/make/) (optional)
 
 ## Installation
 
@@ -62,15 +60,4 @@ $ npm run test
 
 # or using make
 $ make test
-```
-
-## Docker (Optional)
-
-If you prefer to run YT Transcriptify in a Docker container, you can use Docker Compose:
-
-```bash
-$ docker-compose up --build
-
-# or using make
-$ make docker
 ```
