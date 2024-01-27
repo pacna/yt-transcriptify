@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { YoutubeEventResponse } from '../types/youtube-event-response';
@@ -35,7 +35,6 @@ export class YoutubeCaptionService {
       }
 
       if (urlSegment.includes('lang=')) {
-        // set it to english caption
         querySegments.push('lang=en');
         return;
       }
@@ -46,10 +45,11 @@ export class YoutubeCaptionService {
     // format the response to be json
     querySegments.push('fmt=json3');
 
+    // Issue with Angular routing in ver 17 so need to explicity set the url
     return this.http.get<YoutubeEventResponse>(
-      `${
-        this.appEnvConfig.urlSegment
-      }/api/timedtext?v=${vid}&${querySegments.join('&')}`
+      `https://www.youtube.com/api/timedtext?v=${vid}&${querySegments.join(
+        '&'
+      )}`
     );
   }
 }

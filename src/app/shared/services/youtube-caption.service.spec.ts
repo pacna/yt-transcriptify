@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { YoutubeCaptionService } from './youtube-caption.service';
-import { APP_ENV_CONFIG } from '../../../app/app-env-config';
-import { SpiesService } from '../testing/spies.service.spec';
+import { APP_ENV_CONFIG } from '../../app-env-config';
+import { SpiesService } from '../testing';
 
 describe('YoutubeCaptionService', () => {
   let service: YoutubeCaptionService;

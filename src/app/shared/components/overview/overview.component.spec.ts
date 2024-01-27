@@ -1,12 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { SpiesService } from '../../testing';
-import { YoutubeCaptionService, DownloadService } from '../../services';
 import { OverviewComponent } from './overview.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { SpiesService } from '../../testing';
+import { DownloadService, YoutubeCaptionService } from '../../services';
 import { APP_ENV_CONFIG } from '../../../app-env-config';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('OverviewComponent', () => {
   let component: OverviewComponent;
@@ -15,12 +13,9 @@ describe('OverviewComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        ReactiveFormsModule,
-        FormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        BrowserAnimationsModule,
         OverviewComponent,
+        HttpClientTestingModule,
+        BrowserAnimationsModule,
       ],
       providers: [
         {
