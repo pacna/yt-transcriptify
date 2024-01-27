@@ -14,11 +14,11 @@
       "sourceRoot": "src",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/yt-transcriptify/browser",
+            "outputPath": "dist/yt-transcriptify",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "browser": "src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -54,21 +54,10 @@
               ],
               "outputHashing": "all"
             },
-            "ssr": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.ssr.ts"
-                }
-              ]
-            },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -76,18 +65,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "yt-transcriptify:build",
             "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "yt-transcriptify:build:production"
+              "buildTarget": "yt-transcriptify:build:production"
             },
             "development": {
-              "browserTarget": "yt-transcriptify:build:development"
-            },
-            "ssr": {
-              "browserTarget": "yt-transcriptify:build:ssr"
+              "buildTarget": "yt-transcriptify:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -95,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "yt-transcriptify:build"
+            "buildTarget": "yt-transcriptify:build"
           }
         },
         "test": {
@@ -114,89 +99,8 @@
             },
             "scripts": []
           }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/yt-transcriptify/server",
-            "main": "server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "inlineStyleLanguage": "scss",
-            "stylePreprocessorOptions": {
-              "includePaths": [".", "src/styles"]
-            }
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
-            },
-            "ssr": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.ssr.ts"
-                }
-              ]
-            },
-            "development": {
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false,
-              "vendorChunk": true,
-              "buildOptimizer": false
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "yt-transcriptify:build:development",
-              "serverTarget": "yt-transcriptify:server:development"
-            },
-            "production": {
-              "browserTarget": "yt-transcriptify:build:production",
-              "serverTarget": "yt-transcriptify:server:production"
-            },
-            "ssr": {
-              "browserTarget": "yt-transcriptify:build:ssr",
-              "serverTarget": "yt-transcriptify:server:ssr"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "prerender": {
-          "builder": "@nguniversal/builders:prerender",
-          "options": {
-            "routes": ["/"]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "yt-transcriptify:build:production",
-              "serverTarget": "yt-transcriptify:server:production"
-            },
-            "development": {
-              "browserTarget": "yt-transcriptify:build:development",
-              "serverTarget": "yt-transcriptify:server:development"
-            },
-            "ssr": {
-              "browserTarget": "yt-transcriptify:build:ssr",
-              "serverTarget": "yt-transcriptify:server:ssr"
-            }
-          },
-          "defaultConfiguration": "ssr"
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }

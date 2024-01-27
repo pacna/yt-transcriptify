@@ -8,56 +8,35 @@ YT Transcriptify is a web application designed to display a visual transcription
 
 You can try it out [here](https://pacna.github.io/yt-transcriptify/) (**_note_**: you may need to install an [extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf/related?hl=en) to bypass any CORS related issues)
 
-## Ubuntu Prerequisites
+## Prerequisites
 
 Before running YT Transcriptify, make sure you have the following dependencies installed on your system:
 
 1. [Node.js](https://nodejs.org/en/)
-2. [Make](https://www.gnu.org/software/make/) (optional)
+2. [Make](https://www.gnu.org/software/make/)
 
 ## Installation
 
 To install the required dependencies, run:
 
 ```bash
-# install node modules
-$ npm ci
-# or using make
 $ make install
 ```
 
-## Usage
+## Running locally
 
-To run the app locally, use:
-
-```bash
-# run
-$ npm start
-# or using make
-$ make develop
-```
-
-To run the app in production mode, use:
+To run YT Transcriptify on your local machine, execute the following command:
 
 ```bash
-# build
-$ npm run build:ssr
-
-# run
-$ npm run serve:ssr
-
-# or using make
-$ make prod
+$ make local
 ```
+
+After running the command, open your web browser and navigate to http://localhost:4200 to explore YT Transcriptify locally.
 
 ## Running Tests
 
-To run the tests, use:
+To run the tests, execute the following command:
 
 ```bash
-# run
-$ npm run test
-
-# or using make
 $ make test
 ```

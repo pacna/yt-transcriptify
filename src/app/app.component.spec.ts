@@ -1,19 +1,25 @@
 import { TestBed } from '@angular/core/testing';
+import { AppComponent } from './app.component';
+import { HttpClient } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MockAppLayoutComponent,
   MockOverviewComponent,
   MockTopNavComponent,
+  SpiesService,
 } from './shared/testing';
-import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [AppComponent, BrowserAnimationsModule],
       declarations: [
-        AppComponent,
         MockAppLayoutComponent,
         MockTopNavComponent,
         MockOverviewComponent,
+      ],
+      providers: [
+        { provide: HttpClient, useValue: SpiesService.createHttpClientSpy() },
       ],
     }).compileComponents();
   });

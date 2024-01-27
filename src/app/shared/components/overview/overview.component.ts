@@ -1,4 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, DestroyRef, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import {
   FormControl,
   FormGroup,
@@ -6,40 +12,32 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Observable, of, switchMap } from 'rxjs';
+import { SafePipe } from '../../pipes';
+import { TranscriptionComponent } from '../transcription';
+import { DownloadService, YoutubeCaptionService } from '../../services';
 import {
   TranscriptionInfo,
   YoutubeEventResponse,
   Event,
   Seg,
 } from '../../types';
-import { DownloadService, YoutubeCaptionService } from '../../services';
-import { CommonModule } from '@angular/common';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { HttpClientModule } from '@angular/common/http';
-import { MatIconModule } from '@angular/material/icon';
-import { TranscriptionComponent } from '../transcription/transcription.component';
-import { SafePipe } from '../../pipes';
+import { Observable, of, switchMap } from 'rxjs';
 
 @Component({
   selector: 'overview',
   templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.scss'],
+  styleUrl: './overview.component.scss',
   standalone: true,
   imports: [
     CommonModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    FormsModule,
     MatIconModule,
-    TranscriptionComponent,
+    FormsModule,
+    ReactiveFormsModule,
     SafePipe,
+    TranscriptionComponent,
   ],
   providers: [YoutubeCaptionService, DownloadService],
 })
