@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClient } from '@angular/common/http';
 import { OverviewComponent } from './overview.component';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { SpiesService } from '../../testing';
 import { DownloadService, YoutubeCaptionService } from '../../services';
 import { APP_ENV_CONFIG } from '../../../app-env-config';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('OverviewComponent', () => {
   let component: OverviewComponent;
@@ -12,12 +12,9 @@ describe('OverviewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        OverviewComponent,
-        HttpClientTestingModule,
-        BrowserAnimationsModule,
-      ],
+      imports: [OverviewComponent, BrowserAnimationsModule],
       providers: [
+        { provide: HttpClient, useValue: SpiesService.createHttpClientSpy() },
         {
           provide: YoutubeCaptionService,
           useValue: SpiesService.createYoutubeCaptionServiceSpy(),

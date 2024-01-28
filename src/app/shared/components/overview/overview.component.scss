@@ -32,7 +32,11 @@ button {
 
 transcription {
   display: block;
-  margin-top: 12px;
+  background-color: $transcription;
+  line-height: 32px;
+  max-width: 480px;
+  margin: auto;
+  padding: 16px;
 }
 
 iframe {

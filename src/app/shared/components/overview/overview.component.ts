@@ -90,12 +90,10 @@ export class OverviewComponent {
     return this.linkControl.value.replace('watch?v=', 'embed/');
   }
 
-  get shouldShowYoutubeLink(): boolean {
-    if (this.readableDuration) {
-      return !this.readableDuration.includes('--:--:--');
-    }
-
-    return false;
+  shouldShowYoutubeLink(): boolean {
+    return this.readableDuration
+      ? !this.readableDuration.includes('--:--:--')
+      : false;
   }
 
   private getCaptionsAndDurations(events: Event[]): TranscriptionInfo {

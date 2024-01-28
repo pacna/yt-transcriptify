@@ -25,7 +25,7 @@ describe('YoutubeCaptionService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('shoudl get html content', () => {
+  it('shoudld get html content', () => {
     // ARRANGE
     const urlSegment: string = 'watch?v=123';
     const mockResponse: string = '<html></html>';

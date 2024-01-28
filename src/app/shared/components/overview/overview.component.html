@@ -13,14 +13,15 @@
   </button>
 </form>
 
-<section *ngIf="readableDuration">
+@if (readableDuration) {
+<section>
   <span>Video duration: {{ readableDuration }}</span>
   <button mat-icon-button type="button" (click)="download()">
     <mat-icon>file_download</mat-icon>
   </button>
 </section>
-<iframe *ngIf="shouldShowYoutubeLink" [src]="youtubeLink | safe"> </iframe>
-<transcription
-  *ngIf="captionSegments"
-  [transcription]="captionSegments"
-></transcription>
+} @if (shouldShowYoutubeLink()) {
+<iframe [src]="youtubeLink | safe"> </iframe>
+} @if (captionSegments) {
+<transcription [transcription]="captionSegments"></transcription>
+}

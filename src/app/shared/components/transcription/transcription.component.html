@@ -1,5 +1,5 @@
-<div>
-  <p *ngFor="let transcription of transcriptions">
-    {{ transcription }}
-  </p>
-</div>
+@for (transcription of transcriptions; track $index) {
+<p>
+  {{ transcription }}
+</p>
+}

@@ -6,7 +6,7 @@ YT Transcriptify is a web application designed to display a visual transcription
 
 ![yt-transcriptify](./docs/yt-transcriptify.png)
 
-You can try it out [here](https://pacna.github.io/yt-transcriptify/) (**_note_**: you may need to install an [extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf/related?hl=en) to bypass any CORS related issues)
+You can try it out [here](https://pacna.github.io/yt-transcriptify/) (**_note_**: you may need to install an extension to bypass any CORS related issues)
 
 ## Prerequisites
 
