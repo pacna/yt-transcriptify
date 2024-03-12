@@ -45,11 +45,10 @@ export class YoutubeCaptionService {
     // format the response to be json
     querySegments.push('fmt=json3');
 
-    // Issue with Angular routing in ver 17 so need to explicity set the url
     return this.http.get<YoutubeEventResponse>(
-      `https://www.youtube.com/api/timedtext?v=${vid}&${querySegments.join(
-        '&'
-      )}`
+      `${
+        this.appEnvConfig.urlSegment
+      }/api/timedtext?v=${vid}&${querySegments.join('&')}`
     );
   }
 }
