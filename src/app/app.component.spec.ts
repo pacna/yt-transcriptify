@@ -12,11 +12,12 @@ import {
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, BrowserAnimationsModule],
-      declarations: [
+      imports: [
+        AppComponent,
         MockAppLayoutComponent,
         MockTopNavComponent,
         MockOverviewComponent,
+        BrowserAnimationsModule,
       ],
       providers: [
         { provide: HttpClient, useValue: SpiesService.createHttpClientSpy() },
