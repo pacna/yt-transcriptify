@@ -24,22 +24,21 @@ import {
 import { Observable, of, switchMap } from 'rxjs';
 
 @Component({
-  selector: 'overview',
-  templateUrl: './overview.component.html',
-  styleUrl: './overview.component.scss',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatIconModule,
-    FormsModule,
-    ReactiveFormsModule,
-    SafePipe,
-    TranscriptionComponent,
-  ],
-  providers: [YoutubeCaptionService, DownloadService],
+    selector: 'overview',
+    templateUrl: './overview.component.html',
+    styleUrl: './overview.component.scss',
+    imports: [
+        CommonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatIconModule,
+        FormsModule,
+        ReactiveFormsModule,
+        SafePipe,
+        TranscriptionComponent,
+    ],
+    providers: [YoutubeCaptionService, DownloadService]
 })
 export class OverviewComponent {
   private _destroyRef: DestroyRef = inject<DestroyRef>(DestroyRef);
