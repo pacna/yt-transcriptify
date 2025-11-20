@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, DestroyRef, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -28,16 +28,15 @@ import { Observable, of, switchMap } from 'rxjs';
     templateUrl: './overview.component.html',
     styleUrl: './overview.component.scss',
     imports: [
-        CommonModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        MatIconModule,
-        FormsModule,
-        ReactiveFormsModule,
-        SafePipe,
-        TranscriptionComponent,
-    ],
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SafePipe,
+    TranscriptionComponent
+],
     providers: [YoutubeCaptionService, DownloadService]
 })
 export class OverviewComponent {
